@@ -2,18 +2,27 @@
   "name": "create-react-app-example",
   "version": "0.1.0",
   "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "cross-env": "^7.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "devDependencies": {
+    "electron": "^13.1.5",
+    "electron-builder": "^22.11.7"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env NODE_PATH=src/ react-scripts start",
+    "build": "cross-env NODE_PATH=src/ react-scripts build",
+    "react-start": "cross-env BROWSER=none npm run start",
+    "electron-start": "electron .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
