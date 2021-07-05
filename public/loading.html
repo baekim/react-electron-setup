@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Loading</title>
+    </head>
+
+    <body>
+        <!-- <div style="border: dashed 1px gray;text-align: center; padding: 25px 0 10px 0">
+        <img src="./milliman_logo.png" width="90%"/>
+        <h1 style="color: gray" onLoad="play()">
+            PDS Loading
+        </h1>
+        <h1 style="margin-top: -40px;" onLoad="play()">
+            .<span id="dots"></span>
+        </h1>
+    </div> -->
+        <div style="
+            background-color: #004877;
+            padding: 15px 15px 5px 15px;
+            width: 450px;
+            height: 270px;
+            color: white;
+            font-family: arial;
+            font-weight: regular;
+    ">
+            <!-- <img src="./Milliman_logo_white_RGB.png" width="100px" style="margin-bottom: 20px" /> -->
+            <h1 style="text-align: center" onLoad="play()">
+                React-Electron-App
+            </h1>
+            <h4 style="
+                text-align: center;
+                margin-top: 5px;
+            ">
+                Default Template for React-Electron-App
+            </h4>
+            <h1 onLoad="play()" style="
+                text-align: center;
+                margin-top: 30px;
+            ">
+                .<span id="dots"></span>
+            </h1>
+            <h6 style="
+                margin-top: 35px;
+            ">
+                2021 Minbae Kim. All Rights Reserved.
+            </h6>
+        </div>
+    </body>
+    <script>
+
+        let message = '................';
+        let i = 0;
+
+        function writer() {
+
+            if (i < message.length) {
+                document.getElementById('dots').innerHTML += message[i];
+                i++
+            } else {
+                document.getElementById('dots').innerHTML = ''
+                i = 0;
+            }
+            setTimeout(writer, 500)
+
+        }
+
+        writer();
+    </script>
+
+</div>
