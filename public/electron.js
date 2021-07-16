@@ -54,7 +54,7 @@ function createWindow() {
         // mainWindow.loadURL(startUrl);
 
         // 개발 중 
-        mainWindow.loadURL(process.env.ELECTRON_START_URL);
+        mainWindow.loadURL('http:////localhost:3000');
 
         //initDatabase();
 
