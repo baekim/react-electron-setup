@@ -28,8 +28,9 @@ function createWindow() {
     const loading = new BrowserWindow({
         show: false,
         frame: false,
-        width: 600,
-        height: 275
+        transparent: true,
+        width: 500,
+        height: 320
     });
 
     const startUrl = process.env.ELECTRON_START_URL || url.format({
@@ -37,9 +38,6 @@ function createWindow() {
         protocol: 'file:',
         slashes: true
     })
-
-    // console.log('startUrl', startUrl);
-    //mainWindow.loadURL(startUrl);
 
     loading.once('show', () => {
 
@@ -50,8 +48,13 @@ function createWindow() {
 
         })
 
-        console.log('startUrl', startUrl);
-        mainWindow.loadURL(startUrl);
+        //console.log('startUrl', startUrl);
+        
+        // build 이후 startUrl
+        // mainWindow.loadURL(startUrl);
+
+        // 개발 중 
+        mainWindow.loadURL(process.env.ELECTRON_START_URL);
 
         //initDatabase();
 
@@ -62,8 +65,6 @@ function createWindow() {
     loading.loadURL(loadingUrl)
     loading.show();
 
-    // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
     mainWindow.on('closed', () => {
 
         mainWindow = null;
